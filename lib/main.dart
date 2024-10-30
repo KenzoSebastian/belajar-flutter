@@ -1,4 +1,7 @@
-import 'package:belajar_flutter/navigation/pageSatu.dart';
+import 'package:belajar_flutter/page_route/gallery_page.dart';
+import 'package:belajar_flutter/page_route/home_page.dart';
+import 'package:belajar_flutter/page_route/photo_page.dart';
+// import 'package:belajar_flutter/navigation/pageSatu.dart';
 // import 'package:belajar_flutter/dismissible.dart';
 // import 'package:belajar_flutter/dialog.dart';
 // import 'package:belajar_flutter/grid_view.dart';
@@ -25,10 +28,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Belajar Flutter',
-      home: NavPageSatu(),
+      home: const HomePage(),
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (context) => const HomePage(),
+        GalleryPage.routeName: (context) => const GalleryPage(),
+        PhotoPage.routeName: (context) => const PhotoPage(),
+      },
     );
   }
 }
