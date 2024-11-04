@@ -2,7 +2,8 @@
 // import 'package:belajar_flutter/page_route/home_page.dart';
 // import 'package:belajar_flutter/page_route/photo_page.dart';
 
-import 'package:belajar_flutter/switch.dart';
+import 'package:belajar_flutter/model.dart';
+// import 'package:belajar_flutter/switch.dart';
 // import 'package:belajar_flutter/drawer.dart';
 // import 'package:belajar_flutter/navigation/pageSatu.dart';
 // import 'package:belajar_flutter/dismissible.dart';
@@ -31,10 +32,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Belajar Flutter',
-      home: SwitchWidget(),
+      home: ModelFlutter(),
       // initialRoute: HomePage.routeName,
       // routes: {
       //   HomePage.routeName: (context) => const HomePage(),
