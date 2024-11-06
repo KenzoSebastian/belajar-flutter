@@ -1,3 +1,7 @@
+import './provider/counter.dart';
+import 'package:provider/provider.dart';
+
+import './homePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,13 +14,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Belajar Flutter Provider',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Belajar Provider'),
+        debugShowCheckedModeBanner: false,
+        title: 'Belajar Flutter Provider',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.blue,
+          ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.blue,
+            centerTitle: true,
+          ),
+          useMaterial3: true,
         ),
-      )
-    );
+        home: ChangeNotifierProvider(
+            create: (context) => Counter(),
+            child: const HomePage()
+            ));
   }
 }
