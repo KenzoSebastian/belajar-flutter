@@ -29,12 +29,12 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   dataCounter.decrement();
                   (dataCounter.showSnackbar)
-                      ? ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('Counter tidak boleh minus'),
-                              duration: Duration(milliseconds: 500),
-                              backgroundColor: Colors.redAccent,
-                              ))
+                      ? ScaffoldMessenger.of(context)
+                          .showSnackBar(const SnackBar(
+                          content: Text('Counter tidak boleh minus'),
+                          duration: Duration(milliseconds: 500),
+                          backgroundColor: Colors.redAccent,
+                        ))
                       : null;
                 },
                 icon: const Icon(Icons.remove),

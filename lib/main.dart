@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: ChangeNotifierProvider(
-            create: (context) => Counter(),
+        home: ChangeNotifierProvider.value(
+            // create: (context) => Counter(),
+            value: Counter(),
             child: const HomePage()
             ));
   }
