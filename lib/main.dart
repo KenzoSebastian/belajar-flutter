@@ -1,7 +1,6 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import './providers/detail_user.dart';
-
 import './pages/detail_page.dart';
-
 import './providers/all_users.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import './pages/home_page.dart';
@@ -10,10 +9,10 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
   await Supabase.initialize(
-    url: "https://uizuzvkmxalsiumnrpcj.supabase.co",
-    anonKey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpenV6dmtteGFsc2l1bW5ycGNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzAyNTI2NzIsImV4cCI6MjA0NTgyODY3Mn0.1lYltORX9daBwU1e7RIbrpBp4gUx35nF-j5bfiYc_wY",
+    url: "${dotenv.env['SUPABASE_URL']}",
+    anonKey: "${dotenv.env['SUPABASE_ANON_KEY']}",
   );
   runApp(const MyApp());
 }
